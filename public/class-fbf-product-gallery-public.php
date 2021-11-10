@@ -74,6 +74,7 @@ class Fbf_Product_Gallery_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/fbf-product-gallery-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '/pinchzoomer.min.css', plugin_dir_url( __FILE__ ) . 'css/pinchzoomer.min.css', array(), $this->version, 'all' );
 
 	}
 
@@ -83,7 +84,6 @@ class Fbf_Product_Gallery_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-
 		/**
 		 * This function is provided for demonstration purposes only.
 		 *
@@ -95,9 +95,12 @@ class Fbf_Product_Gallery_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/fbf-product-gallery-public.js', array( 'jquery' ), $this->version, false );
-
+		if(is_product()){
+            wp_enqueue_script( $this->plugin_name . '/hammer.min.js', plugin_dir_url( __FILE__ ) . 'js/hammer.min.js', [ 'jquery' ], $this->version, false );
+            wp_enqueue_script( $this->plugin_name . '/TweenMax.min.js', plugin_dir_url( __FILE__ ) . 'js/TweenMax.min.js', [ 'jquery' ], $this->version, false );
+            wp_enqueue_script( $this->plugin_name . '/jquery.pinchzoomer.min.js', plugin_dir_url( __FILE__ ) . 'js/jquery.pinchzoomer.min.js', [ 'jquery' ], $this->version, false );
+        }
 	}
 
 }
