@@ -74,7 +74,7 @@ class Fbf_Product_Gallery_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/fbf-product-gallery-public.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name . '/pinchzoomer.min.css', plugin_dir_url( __FILE__ ) . 'css/pinchzoomer.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . '/pinchzoomer.css', plugin_dir_url( __FILE__ ) . 'css/pinchzoomer.css', array(), $this->version, 'all' );
 
 	}
 
