@@ -96,7 +96,7 @@ class Fbf_Product_Gallery_Public {
 		 * class.
 		 */
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/fbf-product-gallery-public.js', array( 'jquery' ), $this->version, false );
-		if(is_product()){
+        if(is_product() || is_singular('brand')){
             wp_enqueue_script( $this->plugin_name . '/hammer.min.js', plugin_dir_url( __FILE__ ) . 'js/hammer.min.js', [ 'jquery' ], $this->version, false );
             wp_enqueue_script( $this->plugin_name . '/TweenMax.min.js', plugin_dir_url( __FILE__ ) . 'js/TweenMax.min.js', [ 'jquery' ], $this->version, false );
             wp_enqueue_script( $this->plugin_name . '/jquery.pinchzoomer.min.js', plugin_dir_url( __FILE__ ) . 'js/jquery.pinchzoomer.min.js', [ 'jquery' ], $this->version, false );
